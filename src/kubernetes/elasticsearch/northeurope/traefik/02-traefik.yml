@@ -18,7 +18,7 @@ spec:
       serviceAccountName: traefik-account
       containers:
         - name: traefik
-          image: traefik:v2.10
+          image: opdtelasticsearch.azurecr.io/traefik:v2.10.1
           args:
             - --api.insecure
             - --providers.kubernetesingress
