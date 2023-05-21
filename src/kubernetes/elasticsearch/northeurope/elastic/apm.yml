@@ -2,7 +2,7 @@ apiVersion: apm.k8s.elastic.co/v1
 kind: ApmServer
 metadata:
   name: hulk
-  namespace: 1
+  namespace: "1"
   labels:
     app: hulk
 spec:
