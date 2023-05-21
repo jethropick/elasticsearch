@@ -6,5 +6,5 @@ nameSuffix: "ne-1"
 commonLabels:
     app: "cluster-ne-1"
 
-bases:
-  - ../../../../../templates/elasticsearch/apm_cluster/
+resources:
+  - ../../../../../../templates/elasticsearch/apm_cluster
