@@ -1,0 +1,10 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+
+namespace: "ne-2"
+nameSuffix: "-ne-2"
+commonLabels:
+    app: "cluster-ne-2"
+
+resources:
+  - ../../../../../../templates/elasticsearch/apm_cluster
