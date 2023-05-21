@@ -1,0 +1,68 @@
+---
+apiVersion: elasticsearch.k8s.elastic.co/v1
+kind: Elasticsearch
+metadata:
+  name: hulk
+  namespace: 1
+  labels:
+    app: hulk
+spec:
+  version: 8.7.0
+  nodeSets:
+  - name: default
+    count: 3
+    config:
+      node.roles: ["master","data","ingest"]
+      node.store.allow_mmap: false
+
+
+
+
+
+# apiVersion: elasticsearch.k8s.elastic.co/v1
+# kind: Elasticsearch
+# metadata:
+#   name: search-1
+#   namespace: 1
+# spec:
+#   version: 7.11.1
+#   nodeSets:
+#   - name: default
+#     count: 3
+#     config:
+#       node.master: true
+#       node.data: true
+#       node.ingest: true
+#     podTemplate:
+#       metadata:
+#         namespace: 1
+#         labels:
+#           # additional labels for pods
+#           env: prod
+#       spec:
+#         initContainers:
+#         - name: sysctl
+#           securityContext:
+#             privileged: true
+#           command: ['sh', '-c', 'sysctl -w vm.max_map_count=262144']
+#         containers:
+#         - name: elasticsearch
+#           resources:
+#             requests:
+#               memory: 2G
+#               cpu: 2
+#             limits:
+#               memory: 2G
+#           env:
+#     # request xx of persistent data storage for pods in this topology element
+#     config:
+#       xpack.security.authc:
+#         anonymous:
+#           username: anonymous
+#           roles: superuser
+#           authz_exception: false
+# references:
+#   http:
+#     tls:
+#       selfSignedCertificate:
+#         disabled: true
