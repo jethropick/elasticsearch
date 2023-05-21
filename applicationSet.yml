@@ -12,7 +12,7 @@ spec:
       - path: src/kubernetes/elasticsearch/northeurope/ApplicationSets/elastic/*
   template:
     metadata:
-      name: '{{ path.basename }}'
+      name: '{{ path }}'
     spec:
       project: elasticsearch
       source:
@@ -22,27 +22,7 @@ spec:
       destination:
         server: https://tempargocd-dns-xra6ry4z.hcp.northeurope.azmk8s.io:443
         namespace: '{{ path.basename }}'
-
-# apiVersion: argoproj.io/v1alpha1
-# kind: ApplicationSet
-# metadata:
-#   name: elasticsearch
-# spec:
-#   generators:
-#   - git:
-#     repoUrl: https://github.com/jethropick/elasticsearch.git
-#     revision: HEAD
-#     directories:
-#     - path: src/kubernetes/elasticsearch/northeurope/ApplicationSets/elastic/*
-#   template:
-#     metadata:
-#       name: '{{path.basename}}'
-#     spec:
-#       project: elasticsearch
-#       source:
-#         repoURL: https://github.com/jethropick/elasticsearch.git
-#         targetRevision: HEAD
-#         path: '{{path}}'
-#       destination:
-#         server: https://tempargocd-dns-xra6ry4z.hcp.northeurope.azmk8s.io:443
-#         namespace: '{{path.basename}}'
+      syncpolicy:  
+        automated:    
+          prune: true    
+          selfHeal: true
