@@ -6,4 +6,5 @@ resources:
   - elastic.yml
   - kibana.yml
   - namespace.yml
-  - service.yml
+  - service_read.yml
+  - service_write.yml

@@ -1,8 +1,7 @@
----
 apiVersion: v1
 kind: Service
 metadata:
-  name: elasticsearch-read
+  name: "elasticsearch-read"
 spec:
   ports:
     - name: https
@@ -15,17 +14,3 @@ spec:
     elasticsearch.k8s.elastic.co/node-data: "false"
     elasticsearch.k8s.elastic.co/node-ingest: "false"
     elasticsearch.k8s.elastic.co/node-ml: "false"
----
-apiVersion: v1
-kind: Service
-metadata:
-  name: elasticsearch-write
-spec:
-  ports:
-    - name: https
-      port: 9200
-      targetPort: 9200
-  selector:
-    # Select ingest nodes
-    elasticsearch.k8s.elastic.co/cluster-name: "cluster"
-    elasticsearch.k8s.elastic.co/node-ingest: "true"

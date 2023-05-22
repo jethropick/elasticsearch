@@ -1,7 +1,7 @@
 apiVersion: apm.k8s.elastic.co/v1
 kind: ApmServer
 metadata:
-  name: cluster
+  name: "cluster"
 spec:
   elasticsearchRef:
-    name: cluster-ne-2
+    name: "cluster-ne-2"

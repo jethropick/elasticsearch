@@ -2,7 +2,7 @@
 apiVersion: elasticsearch.k8s.elastic.co/v1
 kind: Elasticsearch
 metadata:
-  name: cluster
+  name: "cluster"
 spec:
   version: 8.7.0
   nodeSets:
