@@ -3,7 +3,5 @@ kind: ApmServer
 metadata:
   name: cluster
 spec:
-  version: 8.7.0
-  count: 1
   elasticsearchRef:
-    name: cluster
+    name: cluster-ne-2

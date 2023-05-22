@@ -1,7 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
-namespace: "ne-1"
+namespace: "cluster-ne-1"
 nameSuffix: "-ne-1"
 commonLabels:
     app: "cluster-ne-1"
@@ -9,5 +9,8 @@ commonLabels:
 resources:
   - ../../../../../../templates/elasticsearch/apm_cluster
 
-patchesStrategicMerge:
-- service_overlay.yml
+patches:
+- service_read.yml
+- service_write.yml
+- apm.yml
+- kibana.yml

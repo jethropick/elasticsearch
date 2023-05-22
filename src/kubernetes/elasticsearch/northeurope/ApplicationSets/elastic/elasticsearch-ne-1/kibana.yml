@@ -1,0 +1,7 @@
+apiVersion: kibana.k8s.elastic.co/v1
+kind: Kibana
+metadata:
+  name: cluster
+spec:
+  elasticsearchRef:
+    name: "cluster-ne-1"

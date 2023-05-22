@@ -10,4 +10,4 @@ spec:
     - name: apm
       version: latest
   elasticsearchRef:
-    name: "cluster-1"
+    name: "cluster"
