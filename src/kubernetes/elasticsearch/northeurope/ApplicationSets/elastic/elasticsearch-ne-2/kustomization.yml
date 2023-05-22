@@ -8,3 +8,6 @@ commonLabels:
 
 resources:
   - ../../../../../../templates/elasticsearch/apm_cluster
+
+patchesStrategicMerge:
+- service_overlay.yml
