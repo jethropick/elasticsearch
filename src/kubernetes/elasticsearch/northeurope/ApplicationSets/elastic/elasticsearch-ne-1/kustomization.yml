@@ -9,7 +9,7 @@ commonLabels:
 resources:
   - ../../../../../../templates/elasticsearch/apm_cluster
 
-patches:
+patchesStrategicMerge:
 - service_read.yml
 - service_write.yml
 - apm.yml
