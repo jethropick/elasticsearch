@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: applicationsetdemo
+  name: applicationsetdemo2
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
@@ -25,6 +25,3 @@ spec:
         server: https://argocddemo-dns-eqy5clje.hcp.northeurope.azmk8s.io:443
         namespace: '{{ path.basename }}'
       syncpolicy:  
-        automated:    
-          prune: true    
-          selfHeal: true
